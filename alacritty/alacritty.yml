@@ -1,0 +1,345 @@
+env:
+  # TERM variable
+  #
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  TERM: xterm-256color
+
+window:
+  opacity: .987
+  # Window dimensions (changes require restart)
+  #
+  # Specified in number of columns/lines, not pixels.
+  # If both are `0`, this setting is ignored.
+  dimensions:
+      columns: 120
+      lines: 34
+
+  # Window position (changes require restart)
+  #
+  # Specified in number of pixels.
+  # If the position is not set, the window manager will handle the placement.
+  position:
+    x: 0
+    y: 0
+
+  # # Window padding (changes require restart)
+  # #
+  # # Blank space added around the window in pixels. This padding is scaled
+  # # by DPI and the specified value is always added at both opposing sides.
+  padding:
+    x: 0
+    y: 0
+
+  # # Spread additional padding evenly around the terminal content.
+  dynamic_padding: true
+
+  # Window decorations
+  # decorations:
+  # Values for `decorations`:
+  #     - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  #
+  # Values for `decorations` (macOS only):
+  #     - transparent: Title bar, transparent background and title bar buttons
+  #     - buttonless: Title bar, transparent background, but no title bar buttons
+
+  decorations: none
+
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  # startup_mode: Maximized
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  #
+
+  # Window title
+  title: core
+
+font:
+  normal:
+    # family: FiraCode Nerd Font
+    # family: Hack Nerd Font
+    family: JetBrainsMonoNl Nerd Font Mono
+
+  size: 16
+
+cursor:
+  style: Block
+  # blinking: Always
+
+key_bindings:
+  # spawn neew instance
+  - { key: N,  mods: Control|Shift, action: SpawnNewInstance }
+
+# shell:
+#  program: "C:\\Windows\\System32\\wsl.exe"
+#
+draw_bold_text_with_bright_colors: true
+
+schemes:
+  Dracula: &Dracula
+    primary:
+      background: '#282A36'
+      foreground: '#F8F8F2'
+
+    normal:
+      black:   '#000000'
+      red:     '#FF5555'
+      green:   '#50FA7B'
+      yellow:  '#F1FA8C'
+      blue:    '#BD93F9'
+      magenta: '#FF79C6'
+      cyan:    '#8BE9FD'
+      white:   '#BFBFBF'
+
+    bright:
+      black:   '#4D4D4D'
+      red:     '#FF6E67'
+      green:   '#5AF78E'
+      yellow:  '#F4F99D'
+      blue:    '#CAA9FA'
+      magenta: '#FF92D0'
+      cyan:    '#9AEDFE'
+      white:   '#E6E6E6'
+
+  Gruvboxdark: &Gruvboxdark
+    primary:
+      background: '#1D2021'
+      foreground: '#D5C4A1'
+
+    normal:
+      black:   '#1D2021'
+      red:     '#FB4934'
+      green:   '#B8BB26'
+      yellow:  '#FABD2F'
+      blue:    '#83A598'
+      magenta: '#D3869B'
+      cyan:    '#8EC07C'
+      white:   '#D5C4A1'
+
+    bright:
+      black:   '#665C54'
+      red:     '#FE8019'
+      green:   '#3C3836'
+      yellow:  '#504945'
+      blue:    '#BDAE93'
+      magenta: '#EBDBB2'
+      cyan:    '#D65D0E'
+      white:   '#FBF1C7'
+
+	MaterialDarker: &MaterialDarker
+    primary:
+      background: '#212121'
+      foreground: '#EEFFFF'
+
+    normal:
+      black:   '#212121'
+      red:     '#F07178'
+      green:   '#C3E88D'
+      yellow:  '#FFCB6B'
+      blue:    '#82AAFF'
+      magenta: '#C792EA'
+      cyan:    '#89DDFF'
+      white:   '#EEFFFF'
+
+    bright:
+      black:   '#4A4A4A'
+      red:     '#F78C6C'
+      green:   '#303030'
+      yellow:  '#353535'
+      blue:    '#B2CCD6'
+      magenta: '#EEFFFF'
+      cyan:    '#FF5370'
+      white:   '#FFFFFF'
+
+	MaterialDeepOcean: &MaterialDeepOcean
+    primary:
+      background: '#0F111A'
+      foreground: '#EEFFFF'
+
+    # cursor:
+    #   cursor:   '#212121'
+
+    normal:
+      black:   '#212121'
+      red:     '#F07178'
+      green:   '#C3E88D'
+      yellow:  '#FFCB6B'
+      blue:    '#82AAFF'
+      magenta: '#C792EA'
+      cyan:    '#89DDFF'
+      white:   '#EEFFFF'
+
+    bright:
+      black:   '#4A4A4A'
+      red:     '#F78C6C'
+      green:   '#303030'
+      yellow:  '#353535'
+      blue:    '#B2CCD6'
+      magenta: '#EEFFFF'
+      cyan:    '#FF5370'
+      white:   '#FFFFFF'
+
+	Kanagawa: &Kanagawa
+    primary:
+      background: '#1F1F28'
+      foreground: '#DCD7BA'
+
+    normal:
+      black:   '#090618'
+      red:     '#C34043'
+      green:   '#76946A'
+      yellow:  '#C0A36E'
+      blue:    '#7E9CD8'
+      magenta: '#957FB8'
+      cyan:    '#6A9598'
+      white:   '#C8C093'
+
+    bright:
+      black:   '#727169'
+      red:     '#E82424'
+      green:   '#98BB6C'
+      yellow:  '#E6C834'
+      blue:    '#7FB4CA'
+      magenta: '#938AA9'
+      cyan:    '#7AA89F'
+      white:   '#DCD7BA'
+
+	GruvboxMaterialDarkHard: &GruvboxMaterialDarkHard
+    primary:
+      background: '#1D2021'
+      foreground: '#D4BE98'
+
+    normal:
+      black:   '#32302F'
+      red:     '#EA6962'
+      green:   '#A9B665'
+      yellow:  '#D8A657'
+      blue:    '#7DAEA3'
+      magenta: '#D3869B'
+      cyan:    '#89B482'
+      white:   '#D4BE98'
+
+    bright:
+      black:   '#32302F'
+      red:     '#EA6962'
+      green:   '#A9B665'
+      yellow:  '#D8A657'
+      blue:    '#7DAEA3'
+      magenta: '#D3869B'
+      cyan:    '#89B482'
+      white:   '#D4BE98'
+
+	Molokai: &Molokai
+    # Default colors
+    primary:
+      background: '#1B1D1E'
+      foreground: '#F8F8F2'
+    # Normal colors
+    normal:
+      black:   '#333333'
+      red:     '#C4265E'
+      green:   '#86B42B'
+      yellow:  '#B3B42B'
+      blue:    '#6A7EC8'
+      magenta: '#8C6BC8'
+      cyan:    '#56ADBC'
+      white:   '#E3E3DD'
+    # Bright colors
+    bright:
+      black:   '#666666'
+      red:     '#F92672'
+      green:   '#A6E22E'
+      yellow:  '#E2E22E'
+      blue:    '#819AFF'
+      magenta: '#AE81FF'
+      cyan:    '#66D9EF'
+      white:   '#F8F8F2'
+
+	OneDark: &OneDark
+    # Default colors
+    primary:
+      background: '0x232326'
+      foreground: '0xabb2bf'
+
+      #dim_foreground: '0x9a9a9a'
+      bright_foreground: '0xe6efff'
+
+    normal:
+      black:   '0x1e2127'
+      red:     '0xe06c75'
+      green:   '0x98c379'
+      yellow:  '0xd19a66'
+      blue:    '0x61afef'
+      magenta: '0xc678dd'
+      cyan:    '0x56b6c2'
+      white:   '0x828791'
+
+    # Bright colors
+    bright:
+      black:   '0x5c6370'
+      red:     '0xe06c75'
+      green:   '0x98c379'
+      yellow:  '0xd19a66'
+      blue:    '0x61afef'
+      magenta: '0xc678dd'
+      cyan:    '0x56b6c2'
+      white:   '0xe6efff'
+
+    dim:
+      black:   '0x1e2127'
+      red:     '0xe06c75'
+      green:   '0x98c379'
+      yellow:  '0xd19a66'
+      blue:    '0x61afef'
+      magenta: '0xc678dd'
+      cyan:    '0x56b6c2'
+      white:   '0x828791'
+
+	Moonfly: &Moonfly
+    primary:
+      background:        '#080808'
+      foreground:        '#b2b2b2'
+      bright_foreground: '#eeeeee'
+
+    # Cursor colors
+    cursor:
+      text:   '#080808'
+      cursor: '#9e9e9e'
+
+    # Selection colors
+    selection:
+      text:       '#080808'
+      background: '#b2ceee'
+
+    # Normal colors
+    normal:
+      black:   '#323437'
+      red:     '#ff5454'
+      green:   '#8cc85f'
+      yellow:  '#e3c78a'
+      blue:    '#80a0ff'
+      magenta: '#cf87e8'
+      cyan:    '#79dac8'
+      white:   '#c6c6c6'
+
+    # Bright colors
+    bright:
+      black:   '#949494'
+      red:     '#ff5189'
+      green:   '#36c692'
+      yellow:  '#c2c292'
+      blue:    '#74b2ff'
+      magenta: '#ae81ff'
+      cyan:    '#85dc85'
+      white:   '#e4e4e4'
+
+colors: *Gruvboxdark
