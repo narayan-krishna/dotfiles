@@ -86,16 +86,19 @@ return packer.startup(function()
     config = function()
       require('aerial').setup({
         layout = {
-          max_width = { 80, 0.8 },
+          max_width = { 40, 0.4 },
+          min_width = { 10, 0.2 },
+          -- width = 40,
           default_direction = "prefer_right",
         },
-        close_on_select = true,
+        close_on_select = false,
         float = {
           relative = "win",
         },
       })
     end
   }
+  use 'simrat39/symbols-outline.nvim'
 
   use {
     "folke/trouble.nvim",
@@ -103,6 +106,11 @@ return packer.startup(function()
     config = function()
       require("trouble").setup {}
     end
+  }
+
+  use {
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig"
   }
 
 end)

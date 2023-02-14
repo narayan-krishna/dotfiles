@@ -1,4 +1,5 @@
 local art2 = {
+    [[]],
     [[⡆⣐⢕⢕⢕⢕⢕⢕⢕⢕⠅⢗⢕⢕⢕⢕⢕⢕⢕⠕⠕⢕⢕⢕⢕⢕⢕⢕⢕⢕]],
     [[⢐⢕⢕⢕⢕⢕⣕⢕⢕⠕⠁⢕⢕⢕⢕⢕⢕⢕⢕⠅⡄⢕⢕⢕⢕⢕⢕⢕⢕⢕]],
     [[⢕⢕⢕⢕⢕⠅⢗⢕⠕⣠⠄⣗⢕⢕⠕⢕⢕⢕⠕⢠⣿⠐⢕⢕⢕⠑⢕⢕⠵⢕]],
@@ -14,6 +15,15 @@ local art2 = {
     [[⣆⢕⠄⢱⣄⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢁⢕⢕⠕⢁]],
     [[⣿⣦⡀⣿⣿⣷⣶⣬⣍⣛⣛⣛⡛⠿⠿⠿⠛⠛⢛⣛⣉⣭⣤⣂⢜⠕⢑⣡⣴⣿]],
   }
+
+local art3 = {
+  " ",
+  "    ███    ██ ██    ██ ██ ███    ███",
+  "    ████   ██ ██    ██ ██ ████  ████",
+  "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
+  "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
+  "    ██   ████   ████   ██ ██      ██",
+}
 
 
 local present, alpha = pcall(require, "alpha")
@@ -109,7 +119,7 @@ local buttons = {
     -- button("p", "   Projects", ":Telescope projects <CR>"),
     button("f", "   Files", ":Telescope find_files <CR>"),
     -- button("s", "   Session", ":SessionLoadPost<CR>"),
-    button("c", "   Config", ":e ~/.config/nvim/init.lua <CR>"),
+    button("c", "   Configuration", ":e ~/.config/nvim/init.lua <CR>"),
     button("b", "   Keybinds", ":e ~/.config/nvim/lua/keybinds.lua <CR>"),
     button("q", "   Quit", ":qa<CR>"),
   },

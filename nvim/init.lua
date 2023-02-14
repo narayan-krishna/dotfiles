@@ -1,11 +1,15 @@
 -- disable netrw at the very start of your init.lua (strongly advised)
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-require('packer-install')
+-- set leader to space
+vim.g.mapleader = " "
+
+require('plugins')
+require('treesitter-config')
 require('vim-config')
 require('colors')
-require('treesitter-config')
 require('lsp-config')
 require('keybind-config')
 require('completion-config')
@@ -17,6 +21,8 @@ require('lualine-config')
 
 require('nvim-autopairs').setup{}
 require('project_nvim').setup{}
-require('luatab').setup{}
 require('gitsigns').setup{}
 require('Comment').setup{}
+-- require('symbols-outline').setup{
+--   auto_close = true,
+-- }

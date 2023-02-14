@@ -12,7 +12,8 @@ require("gruvbox").setup({
   invert_intend_guides = false,
   inverse = true, -- invert background for search, diffs, statuslines and errors
   contrast = "hard", -- can be "hard", "soft" or empty string
-  palette_overrides = {},
+  palette_overrides = {
+  },
   overrides = {
     -- SignColumn        = {bg = ""},
     -- GruvboxRedSign    = {bg = ""},
@@ -32,5 +33,11 @@ require("gruvbox").setup({
 })
 
 vim.cmd('colorscheme ' .. colorscheme)
-vim.fn.execute('hi CursorLine guibg=bg')
+
+if vim.g.colors_name == 'gruvbox' then
+  vim.fn.execute('hi CursorLine guibg=bg')
+  vim.fn.execute('hi IndentBlanklineChar guifg=#3c3836 gui=nocombine')
+  vim.fn.execute('hi IndentBlanklineSpaceChar guifg=NONE gui=nocombine')
+end
+
 -- vim.fn.execute('hi EndOfBuffer guifg=bg')

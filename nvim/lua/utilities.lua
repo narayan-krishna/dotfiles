@@ -27,3 +27,7 @@ function Utils.delete_extra_lines()
 
 return lines
 end
+
+-- function Utils.getlines()
+--   return tostring(vim.fn.wordcount())
+-- end

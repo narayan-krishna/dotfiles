@@ -6,14 +6,10 @@ local function nkeymap(key,map)
   keymap('n', key, map, opts)
 end
 
--- set leader to space
-vim.g.mapleader = " "
-
 -- lsp
 nkeymap('gd', ':lua vim.lsp.buf.definition()<cr>')
 nkeymap('gD', ':lua vim.lsp.buf.declaration()<cr>')
 nkeymap('gi', ':lua vim.lsp.buf.implementation()<cr>')
--- NOTE: double bind ?
 nkeymap('gw', ':lua vim.lsp.buf.document_symbol()<cr>')
 nkeymap('gw', ':lua vim.lsp.buf.workspace_symbol()<cr>')
 nkeymap('gr', ':lua vim.lsp.buf.references()<cr>')
@@ -37,12 +33,20 @@ nkeymap('<leader>fc', '<cmd>Telescope colorscheme<cr>')
 nkeymap('<leader>fl', '<cmd>Telescope buffer_lines<cr>')
 nkeymap('<leader>fl', '<cmd>Telescope buffer_lines<cr>')
 
+-- nkeymap('<leader>ar', '<cmd>SymbolsOutline<cr>')
+-- nkeymap('<leader>ao', '<cmd>SymbolsOutlineOpen<cr>')
+-- nkeymap('<leader>ac', '<cmd>SymbolsOutlineClose<cr>')
 nkeymap('<leader>ar', '<cmd>AerialToggle<cr>')
-nkeymap('<leader>fa', '<cmd>Telescope aerial<cr>')
+nkeymap('<leader>ao', '<cmd>AerialOpen<cr>')
+nkeymap('<leader>ac', '<cmd>AerialClose<cr>')
 
 nkeymap('<leader>dr', '<cmd>TroubleToggle<cr>')
 nkeymap('<leader>do', '<cmd>Trouble<cr>')
 nkeymap('<leader>dc', '<cmd>TroubleClose<cr>')
+
+-- nkeymap('<leader>tr', '<cmd>NvimTreeToggle<cr>')
+nkeymap('<leader>tc', '<cmd>NvimTreeClose<cr>')
+nkeymap('<leader>to', '<cmd>NvimTreeOpen<cr>')
 
 nkeymap('<M-p>', '<cmd>BufferPrevious<cr>')
 nkeymap('<M-n>', '<cmd>BufferNext<cr>')
@@ -55,9 +59,9 @@ nkeymap('<leader>kb', '<cmd>e ~/.config/nvim/lua/keybind-config.lua<cr>') -- jum
 
 nkeymap('<leader>n', '<cmd>noh<cr>')
 
-nkeymap('<leader>tr', '<cmd>NvimTreeToggle<cr>')
-nkeymap('<leader>tc', '<cmd>NvimTreeClose<cr>')
-nkeymap('<leader>to', '<cmd>NvimTreeOpen<cr>')
 
 -- run the current lua file
 nkeymap('<leader>ll', '<cmd>luafile %<cr>')
+
+-- format with cargo
+nkeymap('<leader>rf', '<cmd>!cargo fmt<cr>')
