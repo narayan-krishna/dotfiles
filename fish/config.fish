@@ -9,6 +9,8 @@ alias ll='exa -l'
 alias fd='fdfind'
 alias vi='nvim'
 alias open='xdg-open'
+alias c='cd $(fd --type d | fzf) && ls'
+alias r='cd ~ && cd $(fd --type d | fzf) && ls'
 # alias config='cd ~/.config && ls'
 # unalias ls
 
@@ -17,9 +19,10 @@ set -g fish_prompt_pwd_full_dirs 1
 set -g __fish_git_prompt_show_informative_status 0
 
 set -gx EDITOR nvim
-set -g code ~/dev
-set -g config ~/.config
-set -g rust ~/dev/rust
+
+set -g code ~/dev #LAUNCHPOINT
+set -g config ~/.config #LAUNCHPOINT
+set -g rust ~/dev/rust #LAUNCHPOINT
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
@@ -31,3 +34,4 @@ set fish_cursor_replace_one underscore
 #TODO: make this check for a utilities file
 # if doesnt exist, create
 source $config/fish/functions/utilities.fish
+source $config/fish/launch/launch.fish

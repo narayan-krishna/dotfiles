@@ -18,11 +18,3 @@ require('bufferline-config')
 require('tree-config')
 require('utilities')
 require('lualine-config')
-
-require('nvim-autopairs').setup{}
-require('project_nvim').setup{}
-require('gitsigns').setup{}
-require('Comment').setup{}
--- require('symbols-outline').setup{
---   auto_close = true,
--- }

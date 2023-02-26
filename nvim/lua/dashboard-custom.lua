@@ -115,9 +115,9 @@ local buttons = {
   type = "group",
   val = {
     button("e", "   New file", ":ene <BAR> startinsert <CR>"),
-    button("r", "   Recents", ":Telescope oldfiles <CR>"),
+    button("r", "   Recents", ":FzfLua oldfiles <CR>"),
     -- button("p", "   Projects", ":Telescope projects <CR>"),
-    button("f", "   Files", ":Telescope find_files <CR>"),
+    button("f", "   Files", ":FzfLua files <CR>"),
     -- button("s", "   Session", ":SessionLoadPost<CR>"),
     button("c", "   Configuration", ":e ~/.config/nvim/init.lua <CR>"),
     button("b", "   Keybinds", ":e ~/.config/nvim/lua/keybinds.lua <CR>"),

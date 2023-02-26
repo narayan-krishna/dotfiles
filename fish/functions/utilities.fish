@@ -21,4 +21,3 @@ function sample_args --description "args template"
     echo help
   end
 end
-

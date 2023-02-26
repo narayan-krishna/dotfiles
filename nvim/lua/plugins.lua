@@ -1,3 +1,4 @@
+-- install lazy if neccesary
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -13,6 +14,20 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   { "ellisonleao/gruvbox.nvim" },
+
+  {
+    "loctvl842/monokai-pro.nvim",
+    config = function()
+      require("monokai-pro").setup({
+        filter = "spectrum",
+        override = function()
+          return {
+            Function = { bold = true },
+          }
+        end
+      })
+    end
+  },
 
   'hrsh7th/cmp-vsnip',
   'hrsh7th/vim-vsnip',
@@ -39,11 +54,30 @@ require('lazy').setup({
     dependencies = { {'nvim-lua/plenary.nvim'} }
   },
 
-  'numToStr/Comment.nvim', -- comment
-  'windwp/nvim-autopairs', -- autopairs
-  'ahmedkhalf/project.nvim', -- mostly for project telescoping
   'jeetsukumaran/telescope-buffer-lines.nvim',
+
+  {
+    'numToStr/Comment.nvim', -- comment
+    config = function()
+      require('Comment').setup{}
+    end,
+  },
+
+  {
+    'windwp/nvim-autopairs', -- autopairs
+    config = function()
+      require('nvim-autopairs').setup{}
+    end,
+  },
+
   'ggandor/lightspeed.nvim', -- kachow
+
+  {
+    'ahmedkhalf/project.nvim', -- mostly for project telescoping
+    config = function()
+      require('project_nvim').setup{}
+    end,
+  },
 
   {
     "goolord/alpha-nvim",
@@ -59,20 +93,26 @@ require('lazy').setup({
     dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
   },
 
-  'lewis6991/gitsigns.nvim',
+  {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup{}
+    end
+  },
+
   'nvim-tree/nvim-web-devicons',
 
   {
     'nvim-tree/nvim-tree.lua',
     dependencies = {
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
-  },
+    },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   },
 
   {
     'romgrk/barbar.nvim',
-    wants = 'nvim-tree/nvim-web-devicons'
+    dependencies = 'nvim-tree/nvim-web-devicons'
   },
 
   {
@@ -93,6 +133,25 @@ require('lazy').setup({
     end
   },
 
+  {
+    'ibhagwan/fzf-lua',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }, -- optional for icon support
+    config = function()
+      require('fzf-lua').setup({
+        winopts = {
+          -- split = "belowright new",
+          height = 0.85,
+          row = 0.35,
+          preview = {
+            vertical = 'up:45%',      -- up|down:size
+            horizontal = 'right:60%',
+            layout = 'vertical',
+          }
+        }
+      })
+    end
+  },
+
   'simrat39/symbols-outline.nvim',
 
   {
@@ -104,8 +163,9 @@ require('lazy').setup({
   },
 
   {
-    "SmiteshP/nvim-navic",
-    dependencies = "neovim/nvim-lspconfig"
+    "tiagovla/scope.nvim",
+    config = function()
+      require('scope').setup{}
+    end
   },
-
 })

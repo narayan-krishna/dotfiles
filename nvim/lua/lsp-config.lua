@@ -1,8 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
 
-local navic = require("nvim-navic")
-
 local on_attach = function(client, bufnr)
     -- if client.server_capabilities.documentSymbolProvider then
     --     navic.attach(client, bufnr)
@@ -24,7 +22,7 @@ require('lspconfig').rust_analyzer.setup {
   }
 }
 
-require('lspconfig').sumneko_lua.setup {
+require('lspconfig').lua_ls.setup {
   on_attach = on_attach,
   settings = {
     Lua = {
@@ -34,4 +32,8 @@ require('lspconfig').sumneko_lua.setup {
       },
     },
   },
+}
+
+require('lspconfig').clangd.setup {
+  on_attach = on_attach,
 }
