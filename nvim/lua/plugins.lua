@@ -29,8 +29,24 @@ require('lazy').setup({
     end
   },
 
-  'hrsh7th/cmp-vsnip',
-  'hrsh7th/vim-vsnip',
+  {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup({
+        window = {
+          border = "double",
+        },
+        layout = {
+          align = "center",
+        }
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      })
+    end,
+  },
 
   -- treesitter, lsp
   'nvim-treesitter/nvim-treesitter', -- nvim-treesitter
@@ -42,11 +58,16 @@ require('lazy').setup({
   },
 
   -- cmp-nvim
+  'hrsh7th/nvim-cmp',
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-cmdline',
-  'hrsh7th/nvim-cmp',
+
+  'hrsh7th/cmp-vsnip',
+  'hrsh7th/vim-vsnip',
+
+  'onsails/lspkind.nvim',
 
   -- telescope
   {
@@ -141,10 +162,11 @@ require('lazy').setup({
         winopts = {
           -- split = "belowright new",
           height = 0.85,
+          width = 0.60,
           row = 0.35,
           preview = {
-            vertical = 'up:45%',      -- up|down:size
-            horizontal = 'right:60%',
+            vertical = 'up:60%',      -- up|down:size
+            horizontal = 'right:50%',
             layout = 'vertical',
           }
         }
@@ -158,7 +180,10 @@ require('lazy').setup({
     "folke/trouble.nvim",
     dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
-      require("trouble").setup {}
+      require("trouble").setup {
+        -- position = "",
+        -- padding = false,
+      }
     end
   },
 

@@ -18,3 +18,9 @@ require('bufferline-config')
 require('tree-config')
 require('utilities')
 require('lualine-config')
+
+-- vim.api.nvim_create_autocmd({ "VimEnter" }, {
+--   callback = function()
+--     require("nvim-tree.api").tree.open()
+--   end,
+-- })

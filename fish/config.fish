@@ -10,7 +10,8 @@ alias fd='fdfind'
 alias vi='nvim'
 alias open='xdg-open'
 alias c='cd $(fd --type d | fzf) && ls'
-alias r='cd ~ && cd $(fd --type d | fzf) && ls'
+alias cr='cd ~ && cd $(fd --type d | fzf) && ls'
+
 # alias config='cd ~/.config && ls'
 # unalias ls
 

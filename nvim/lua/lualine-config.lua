@@ -18,7 +18,7 @@ require('lualine').setup({
     section_separators = { left = '', right = ''},
     component_separators = { left = '', right = ''},
     -- section_separators = { left = '', right = ''},
-    ignore_focus = {'NvimTree', 'aerial', 'Trouble'},
+    ignore_focus = {'NvimTree', 'aerial', 'Trouble', 'Alpha'},
   },
   winbar = {
     lualine_c = {
