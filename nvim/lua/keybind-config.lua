@@ -46,7 +46,7 @@ nkeymap('<leader>fr', '<cmd>FzfLua oldfiles<cr>')
 nkeymap('<leader>fl', '<cmd>FzfLua lgrep_curbuf<cr>')
 nkeymap('<leader>fc', '<cmd>FzfLua colorschemes<cr>')
 nkeymap('<leader>fd', '<cmd>FzfLua diagnostics_document<cr>')
-nkeymap('<leader>fw', '<cmd>FzfLua diagnostics_document<cr>')
+nkeymap('<leader>fw', '<cmd>FzfLua diagnostics_workspace<cr>')
 nkeymap('<leader>fe', '<cmd>FzfLua command_history<cr>')
 
 nkeymap('<leader>ar', '<cmd>AerialToggle<cr>')
@@ -58,8 +58,8 @@ nkeymap('<leader>do', '<cmd>Trouble<cr>')
 nkeymap('<leader>dc', '<cmd>TroubleClose<cr>')
 
 -- nkeymap('<leader>tr', '<cmd>NvimTreeToggle<cr>')
-nkeymap('<leader>tc', '<cmd>NvimTreeClose<cr>')
 nkeymap('<leader>to', '<cmd>NvimTreeOpen<cr>')
+nkeymap('<leader>tc', '<cmd>NvimTreeClose<cr>')
 
 nkeymap('<c-p>', '<cmd>BufferPick<cr>')
 nkeymap('<M-p>', '<cmd>BufferPrevious<cr>')

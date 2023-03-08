@@ -52,6 +52,8 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   callback = function()
     vim.api.nvim_set_hl(0, "MatchParen", { fg = "#bb7144", bg = "#191919" })
     vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#191919", bg = "#191919" })
+    -- vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
+    -- vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
     -- vim.api.nvim_set_hl(0, "TroubleNormal", { fg = "#f7f1ff", bg = "#191919" })
   end,
   group = custom_highlight,

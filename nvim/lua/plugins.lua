@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   { "ellisonleao/gruvbox.nvim" },
+  { "jacoborus/tender.vim" },
 
   {
     "loctvl842/monokai-pro.nvim",

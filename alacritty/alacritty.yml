@@ -14,24 +14,24 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-      columns: 120
-      lines: 34
+      columns: 160
+      lines: 50
 
   # Window position (changes require restart)
   #
   # Specified in number of pixels.
   # If the position is not set, the window manager will handle the placement.
-  position:
-    x: 0
-    y: 0
+  # position:
+  #   x: 0
+  #   y: 0
 
   # # Window padding (changes require restart)
   # #
   # # Blank space added around the window in pixels. This padding is scaled
   # # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 0
-    y: 0
+    x: 8
+    y: 8
 
   # # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
@@ -54,7 +54,7 @@ window:
   #   - Windowed
   #   - Maximized
   #   - Fullscreen
-  startup_mode: Maximized
+  startup_mode: Windowed
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
