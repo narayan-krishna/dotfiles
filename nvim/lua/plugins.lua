@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   { "ellisonleao/gruvbox.nvim" },
   { "jacoborus/tender.vim" },
+  { "RRethy/nvim-base16" },
 
   {
     "loctvl842/monokai-pro.nvim",
@@ -34,7 +35,7 @@ require('lazy').setup({
     "folke/which-key.nvim",
     config = function()
       vim.o.timeout = true
-      vim.o.timeoutlen = 300
+      vim.o.timeoutlen = 800
       require("which-key").setup({
         window = {
           border = "double",
@@ -104,7 +105,7 @@ require('lazy').setup({
   {
     "goolord/alpha-nvim",
     config = function()
-      require("dashboard-custom")
+      -- require("dashboard-custom")
     end,
   },
 

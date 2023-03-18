@@ -4,6 +4,8 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+font pango:JetBrainsMonoNl Nerd Font Mono 11
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -28,25 +30,37 @@ include /etc/sway/config-vars.d/*
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # output * bg /home/knara/Pictures/Wallpapers/2832975.jpg fill
-output * bg /home/knara/Pictures/Wallpapers/wq8a8n9lj95a1.png fill
+# output * bg /home/knara/Pictures/Wallpapers/wq8a8n9lj95a1.png fill
 # output * bg /home/knara/Pictures/Wallpapers/index.jpeg fill
-
-
+# output * bg /home/knara/Pictures/Wallpapers/carss.jpg fill
+# output * bg /home/knara/Pictures/Wallpapers/FGVi2DyWQAAauhl.jpeg fill
+# output * bg /home/knara/Pictures/Wallpapers/sub.jpg fill
+output * bg /home/knara/Pictures/Wallpapers/15.jpg fill
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
+# TODO: set external to 2k -> 2560x1440 @ 59.951 Hz
+output DP-1 resolution 2560x1440 position 0,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+
+# clamshell mode
+set $laptop 'eDP-1'
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
 
 ### Idle configuration
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
+exec swayidle -w \
+         timeout 150 'swaylock -f -c 000000' \
+         timeout 180 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 230 'systemctl suspend' \
+         before-sleep 'swaylock -f -c 000000'
+
+    bindsym $mod+i exec swaylock
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -129,6 +143,9 @@ output * bg /home/knara/Pictures/Wallpapers/wq8a8n9lj95a1.png fill
     bindsym $mod+8 workspace number 8
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
+    bindsym $mod+z workspace z
+    bindsym $mod+x workspace x
+    bindsym $mod+c workspace c
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2
@@ -142,6 +159,10 @@ output * bg /home/knara/Pictures/Wallpapers/wq8a8n9lj95a1.png fill
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+    bindsym $mod+Tab workspace back_and_forth
+    bindsym $mod+n workspace next
+    bindsym $mod+p workspace prev
 #
 # Layout stuff:
 #
@@ -179,6 +200,12 @@ output * bg /home/knara/Pictures/Wallpapers/wq8a8n9lj95a1.png fill
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
+
+
+# Some hotkeys for personal use:
+    bindsym $mod+Shift+f exec firefox
+    bindsym $mod+Shift+s exec spotify
+
 #
 # Resizing containers:
 #
@@ -209,19 +236,31 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 # bar {
-#     position bottom
+#     position top
+#     height 0
+#     workspace_min_width 40
 #     #
 #     # # When the status_command prints a new line to stdout, swaybar updates.
 #     # # The default just shows the current date and time.
 #     # status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
 #     #
 #     colors {
-#         statusline #ffffff
-#         background #323232
-#         inactive_workspace #32323200 #32323200 #5c5c5c
+#         statusline #f7f1ff
+#         background #131313
+#         inactive_workspace #323232 #323232 #5c5c5c
+#         focused_workspace #bab6c0 #948ae3 #f7f1ff
 #     }
+#
+#     # status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
 # }
-bar swaybar_command waybar
+
+# bar swaybar_command waybar
+
+# client.focused "#131313" "#131313" "#131313" "#fc681d"
+# client.focused "#F4F99D" "#F4F99D" "#F4F99D" "#F4F99D"
+# client.focused "#FE8019" "#FE8019" "#FE8019" "#FE8019"
+client.focused "#83A598" "#83A598" "#FE8019" "#83A598"
+# client.focused "" "" "" ""
 
 input type:keyboard {
     repeat_delay 300
@@ -233,20 +272,21 @@ input type:touchpad {
 }
 
 # keybinds for special computer buttons
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-# bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% # && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% # && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle # && pkill -RTMIN+10 i3blocks
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
-# bindsym XF86AudioPlay exec playerctl play-pause
-# bindsym XF86AudioNext exec playerctl next
-# bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl --player=spotify next
+bindsym XF86AudioPrev exec playerctl --player=spotify previous
 
 include /etc/sway/config.d/*
 
 gaps inner 10
-default_border none
-default_floating_border pixel 2
+smart_gaps on
+default_border pixel 2
+hide_edge_borders smart
+default_floating_border none
 
-# exec waybar
+exec waybar

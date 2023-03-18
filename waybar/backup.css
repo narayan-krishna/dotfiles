@@ -1,0 +1,95 @@
+* {
+    border: none;
+    border-radius: 0;
+    /* font-family: Roboto, Helvetica, Arial, sans-serif; */
+    font-family: JetBrainsMonoNl Nerd Font Mono;
+    font-size: 18px;
+    min-height: 0;
+    margin-top: 1px;
+}
+
+window#waybar {
+    /* background: rgba(43, 48, 59, 0.5); */
+    background: shade(alpha(@theme_base_color, 1), .8);
+    /* border-top: shade(alpha(@theme_base_color, 1), 2); */
+    /* border-top: 3px solid #b5740a; */
+    color: @theme_text_color;
+}
+
+tooltip {
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+tooltip label {
+  color: white;
+}
+
+widget * {
+  background-color: @theme_base_color;
+}
+
+widget > * {
+    padding: 0 10px;
+    margin: 1px 4px;
+}
+
+.modules-left, .modules-center, .modules-right {
+  padding: 6px 8px;
+}
+
+#workspaces {
+    padding: 2px 5px;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    background: transparent;
+    color: shade(@theme_base_color, 5);
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+    background: transparent;
+    /* background: #64727D; */
+    border-bottom: 3px solid white;
+}
+
+#mode, #clock, #battery {
+    padding: 0 5px;
+}
+
+/* #mode { */
+/*     background: #64727D; */
+/*     border-bottom: 3px solid white; */
+/* } */
+
+#clock {
+    background-color: shade(alpha(@theme_base_color, 1), .8);
+}
+
+#battery {
+    background-color: transparent;
+    color: white;
+}
+
+#battery.charging {
+    color: white;
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

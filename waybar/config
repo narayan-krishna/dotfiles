@@ -1,15 +1,22 @@
 {
     // "layer": "top", // Waybar at top layer
-    "position": "bottom", // Waybar position (top|bottom|left|right)
+
+    "position": "top", // Waybar position (top|bottom|left|right)
+
     "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
+
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
+    "modules-left": ["clock#time", "sway/workspaces", "sway/mode"],
+
     // "modules-center": ["sway/window"],
+
     // "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "cpu", "memory", "battery", "battery#bat2", "clock", "tray"],
+
+    "modules-right": ["tray", "network", "pulseaudio", "cpu", "memory", "battery"],
+
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -37,6 +44,9 @@
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+        "max-length": 50
     },
     "sway/scratchpad": {
         "format": "{icon} {count}",
@@ -80,7 +90,7 @@
     },
     "tray": {
         // "icon-size": 21,
-        "spacing": 15
+        "spacing": 16
     },
     "clock": {
         // "timezone": "America/New_York",
@@ -110,13 +120,13 @@
     "battery": {
         "states": {
             // "good": 95,
-            "warning": 30,
-            "critical": 15
+            "warning": 15,
+            "critical": 5,
         },
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}% BAT",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format-alt": "{time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -135,10 +145,10 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
+        "format": " {volume}% VOL",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-muted": "MUTED",
         // "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
@@ -163,5 +173,16 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "clock#time": {
+        "interval": 1,
+        "format": "{:%I:%M %p}",
+        "tooltip": false
+    },
+
+    "clock#date": {
+        "interval": 10,
+        "format": "  {:%e %b %Y}", // Icon: calendar-alt
+        "tooltip-format": "{:%e %B %Y}"
     }
 }
