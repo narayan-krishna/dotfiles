@@ -32,6 +32,7 @@ for k, v in pairs(opts) do
 end
 
 vim.opt.listchars:append("trail:⋅")
+vim.opt.listchars:append "eol:¬"
 vim.wo.wrap = false
 
 vim.fn.execute('au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=100})')

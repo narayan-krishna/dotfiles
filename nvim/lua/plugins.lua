@@ -14,8 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   { "ellisonleao/gruvbox.nvim" },
-  { "jacoborus/tender.vim" },
-  { "RRethy/nvim-base16" },
+  -- { "RRethy/nvim-base16" },
+  { "sainnhe/gruvbox-material" },
+  { 'Mofiqul/vscode.nvim' },
 
   {
     "loctvl842/monokai-pro.nvim",
@@ -31,27 +32,14 @@ require('lazy').setup({
     end
   },
 
-  {
-    "folke/which-key.nvim",
-    config = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 800
-      require("which-key").setup({
-        window = {
-          border = "double",
-        },
-        layout = {
-          align = "center",
-        }
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      })
-    end,
-  },
+  { 'tjdevries/express_line.nvim' },
 
   -- treesitter, lsp
-  'nvim-treesitter/nvim-treesitter', -- nvim-treesitter
+  {
+    'nvim-treesitter/nvim-treesitter', -- nvim-treesitter
+  },
+
+  'HiPhish/nvim-ts-rainbow2',
 
   {
     "williamboman/mason.nvim",
@@ -105,7 +93,7 @@ require('lazy').setup({
   {
     "goolord/alpha-nvim",
     config = function()
-      -- require("dashboard-custom")
+      require("dashboard-custom")
     end,
   },
 

@@ -65,6 +65,10 @@ nkeymap('<c-p>', '<cmd>BufferPick<cr>')
 nkeymap('<M-p>', '<cmd>BufferPrevious<cr>')
 nkeymap('<M-n>', '<cmd>BufferNext<cr>')
 nkeymap('<M-c>', '<cmd>BufferClose<cr>')
+--
+-- nkeymap('<M-p>', '<cmd>bprevious<cr>')
+-- nkeymap('<M-n>', '<cmd>bnext<cr>')
+-- nkeymap('<M-c>', '<cmd><cr>')
 nkeymap('tt', '<C-^>') -- just to switch back and forth between files
 nkeymap('<leader>gn', '<cmd>tabnext<cr>')
 nkeymap('<leader>gp', '<cmd>tabprevious<cr>')

@@ -30,8 +30,8 @@ window:
   # # Blank space added around the window in pixels. This padding is scaled
   # # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 0
-    y: 0
+    x: 4
+    y: 4
 
   # # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
@@ -61,15 +61,16 @@ window:
   #
 
   # Window title
-  title: Alacritty
+  title: terminal
 
 font:
   normal:
     # family: FiraCode Nerd Font
     # family: Hack Nerd Font
     family: JetBrainsMonoNl Nerd Font Mono
+    # family: NotoSans Nerd Font
 
-  size: 15
+  size: 14.5
 
 cursor:
   style: Block
@@ -331,4 +332,33 @@ schemes:
       cyan:    '#5ad4e6'
       white:   '#f7f1ff'
 
-colors: *MonokaiPro
+	vscodedark: &vscodedark
+    primary:
+      background: '#1e1e1e'
+      foreground: '#d4d4d4'
+
+    cursor:
+      text: '#d4d4d4'
+      cursor: '#d4d4d4'
+
+    normal:
+      black:   '#1e1e1e'
+      red:     '#f44747'
+      green:   '#608b4e'
+      yellow:  '#dcdcaa'
+      blue:    '#569cd6'
+      magenta: '#c678dd'
+      cyan:    '#56b6c2'
+      white:   '#d4d4d4'
+
+    bright:
+      black:   '#545454'
+      red:     '#f44747'
+      green:   '#608b4e'
+      yellow:  '#dcdcaa'
+      blue:    '#569cd6'
+      magenta: '#c678dd'
+      cyan:    '#56b6c2'
+      white:   '#d4d4d4'
+
+colors: *vscodedark

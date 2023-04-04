@@ -22,7 +22,24 @@ require('lualine').setup({
   },
   winbar = {
     lualine_c = {
-      get_line, 'diagnostics', 'diff',
+      {
+        get_line,
+        color = {
+          bg = 'None',
+        },
+      },
+      {
+        'diagnostics',
+        color = {
+          bg = 'None',
+        },
+      },
+      {
+        'diff',
+        color = {
+          bg = 'None',
+        },
+      },
     },
   },
   sections = {

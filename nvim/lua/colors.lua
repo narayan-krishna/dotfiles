@@ -1,10 +1,9 @@
-local colorscheme = 'monokai-pro'
+local colorscheme = 'vscode'
 
 require("gruvbox").setup({
   undercurl = true,
   underline = true,
   bold = true,
-  italic = true,
   strikethrough = true,
   invert_selection = false,
   invert_signs = false,
@@ -35,6 +34,16 @@ require("gruvbox").setup({
   transparent_mode = false,
 })
 
+-- vim.api.nvim_set_hl(0, "@punctuation.bracket", { link = "Delimiter" })
+
+local global_custom = vim.api.nvim_create_augroup("GlobalCustom", {})
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    vim.api.nvim_set_hl(0, "@punctuation.bracket", { link = "SpecialChar" })
+  end,
+  group = global_custom,
+})
+
 local custom_highlight = vim.api.nvim_create_augroup("CustomHighlight", {})
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "gruvbox",
@@ -43,6 +52,8 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
     vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = "#3c3836", bg = "NONE" })
     vim.api.nvim_set_hl(0, "IndentBlanklineSpaceChar", { fg = "NONE" })
+    vim.api.nvim_set_hl(0, "String", { fg = "#83A598" })
+    vim.api.nvim_set_hl(0, "Identifier", { fg = "#ebdbb2" })
   end,
   group = custom_highlight,
 })
@@ -55,6 +66,19 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     -- vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
     -- vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
     -- vim.api.nvim_set_hl(0, "TroubleNormal", { fg = "#f7f1ff", bg = "#191919" })
+  end,
+  group = custom_highlight,
+})
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "vscode",
+  callback = function()
+    vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#252526", bg = "#252526" })
+    vim.api.nvim_set_hl(0, "NvimTreeStatusLineNC", { fg = "#252526", bg = "#252526" })
+    vim.api.nvim_set_hl(0, "NvimTreeStatusLine", { fg = "#252526", bg = "#252526" })
+    vim.api.nvim_set_hl(0, "BufferTabpageFill", { bg = "#1a1a1a", })
+    vim.api.nvim_set_hl(0, "BufferTabpageFill", { bg = "#1a1a1a", })
+    vim.api.nvim_set_hl(0, "WinBar", { bg = "NONE" })
   end,
   group = custom_highlight,
 })

@@ -35,7 +35,10 @@ include /etc/sway/config-vars.d/*
 # output * bg /home/knara/Pictures/Wallpapers/carss.jpg fill
 # output * bg /home/knara/Pictures/Wallpapers/FGVi2DyWQAAauhl.jpeg fill
 # output * bg /home/knara/Pictures/Wallpapers/sub.jpg fill
-output * bg /home/knara/Pictures/Wallpapers/15.jpg fill
+# output * bg /home/knara/Pictures/Wallpapers/15.jpg fill
+# output * bg /home/knara/Pictures/Wallpapers/mac_os_monterey.jpg fill
+output * bg /home/knara/Pictures/Wallpapers/waves6.jpg fill
+
 #
 # Example configuration:
 #
@@ -256,11 +259,20 @@ bindsym $mod+r mode "resize"
 
 # bar swaybar_command waybar
 
+# class border background text indicator child_border
 # client.focused "#131313" "#131313" "#131313" "#fc681d"
 # client.focused "#F4F99D" "#F4F99D" "#F4F99D" "#F4F99D"
-# client.focused "#FE8019" "#FE8019" "#FE8019" "#FE8019"
-client.focused "#83A598" "#83A598" "#FE8019" "#83A598"
-# client.focused "" "" "" ""
+# client.focused "#FE8019" "#FE8019" "#FE8019" "#FE8019" "FE8019"
+# client.focused "#83A598" "#83A598" "#FE8019" "#83A598"
+# client.focused "#4d4d4d" "#4d4d4d" "#4d4d4d" "#4d4d4d"
+# client.focused_inactive "#a6401c" "#a6401c" "#a6401c" "#a6401c" "#a6401c"
+# client.unfocused "#000000" "#000000" "#000000" "#000000" "#000000"
+# client.focused_inactive "#000000" "#000000" "#000000" "#000000" "#000000"
+
+# client.focused_inactive "#2c2c2c" "#2c2c2c" "#2c2c2c" "#2c2c2c" "#2c2c2c"
+# client.unfocused "#2c2c2c" "#2c2c2c" "#2c2c2c" "#2c2c2c" "#2c2c2c"
+client.focused "#264f78" "#264f78" "#264f78" "#264f78" "#264f78"
+
 
 input type:keyboard {
     repeat_delay 300
@@ -283,10 +295,11 @@ bindsym XF86AudioPrev exec playerctl --player=spotify previous
 
 include /etc/sway/config.d/*
 
-gaps inner 10
+gaps inner 11
 smart_gaps on
-default_border pixel 2
-hide_edge_borders smart
-default_floating_border none
+default_border pixel 3
+# hide_edge_borders smart
+smart_borders on
+# default_floating_border none
 
 exec waybar
