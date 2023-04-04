@@ -74,8 +74,8 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "vscode",
   callback = function()
     vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#252526", bg = "#252526" })
-    vim.api.nvim_set_hl(0, "NvimTreeStatusLineNC", { fg = "#252526", bg = "#252526" })
-    vim.api.nvim_set_hl(0, "NvimTreeStatusLine", { fg = "#252526", bg = "#252526" })
+    -- vim.api.nvim_set_hl(0, "NvimTreeStatusLineNC", { fg = "#252526", bg = "#252526" })
+    -- vim.api.nvim_set_hl(0, "NvimTreeStatusLine", { fg = "#252526", bg = "#252526" })
     vim.api.nvim_set_hl(0, "BufferTabpageFill", { bg = "#1a1a1a", })
     vim.api.nvim_set_hl(0, "BufferTabpageFill", { bg = "#1a1a1a", })
     vim.api.nvim_set_hl(0, "WinBar", { bg = "NONE" })

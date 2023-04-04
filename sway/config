@@ -297,7 +297,7 @@ include /etc/sway/config.d/*
 
 gaps inner 11
 smart_gaps on
-default_border pixel 3
+default_border pixel 2
 # hide_edge_borders smart
 smart_borders on
 # default_floating_border none

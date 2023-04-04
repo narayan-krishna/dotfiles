@@ -17,8 +17,8 @@ require('telescope-config')
 require('bufferline-config')
 require('tree-config')
 require('utilities')
-require('el').setup()
--- require('lualine-config')
+-- require('el').setup()
+require('lualine-config')
 
 -- vim.api.nvim_create_autocmd({ "VimEnter" }, {
 --   callback = function()
