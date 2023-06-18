@@ -21,3 +21,8 @@ function sample_args --description "args template"
     echo help
   end
 end
+
+function changebranch --description "jump to another branch in the repo with fzf"
+  # check if it is a git repo
+  git checkout $(git branch | sed 's/^[ \t]*//' | fzf)
+end

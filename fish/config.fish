@@ -12,6 +12,7 @@ alias open='xdg-open'
 alias c='cd ~ && cd $(fd --type d | fzf) && ls'
 alias cr='cd $(fd --type d | fzf) && ls'
 alias v='vi $(fd --type f | fzf)'
+alias cat='bat'
 
 # alias config='cd ~/.config && ls'
 # unalias ls
@@ -32,6 +33,8 @@ fish_vi_key_bindings
 set fish_cursor_insert line
 set fish_cursor_default block blink
 set fish_cursor_replace_one underscore
+
+set --universal nvm_default_version v18.15.0
 
 #TODO: make this check for a utilities file
 # if doesnt exist, create

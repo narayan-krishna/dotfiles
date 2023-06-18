@@ -33,7 +33,7 @@
 }
 
 
-/* -----------------------------------------------------------------------------
+/* ----
  * Base styles
  * -------------------------------------------------------------------------- */
 
@@ -184,9 +184,9 @@
 }
 
 #workspaces button.focused {
-    border-color: #4c7899;
+    border-color: shade(@theme_selected_bg_color, 1.15);
     color: white;
-    background-color: #285577;
+    background-color: @theme_selected_bg_color;
 }
 
 #workspaces button.urgent {

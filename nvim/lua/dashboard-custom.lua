@@ -33,7 +33,7 @@ end
 
 local header = {
   type = "text",
-  val = art2,
+  val = art3,
   opts = {
     position = "center",
     -- hl = "Comment",

@@ -1,5 +1,8 @@
 local colorscheme = 'vscode'
 
+vim.g.gruvbox_material_background = 'hard';
+vim.g.gruvbox_material_foreground = 'mix';
+
 require("gruvbox").setup({
   undercurl = true,
   underline = true,

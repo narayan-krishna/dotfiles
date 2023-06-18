@@ -34,6 +34,8 @@ require('lazy').setup({
 
   { 'tjdevries/express_line.nvim' },
 
+  { 'vimwiki/vimwiki' },
+
   -- treesitter, lsp
   {
     'nvim-treesitter/nvim-treesitter', -- nvim-treesitter
@@ -134,9 +136,9 @@ require('lazy').setup({
           max_width = { 40, 0.4 },
           min_width = { 10, 0.2 },
           -- width = 40,
-          default_direction = "prefer_right",
+          default_direction = "float",
         },
-        close_on_select = false,
+        close_on_select = true,
         float = {
           relative = "win",
         },
@@ -173,6 +175,18 @@ require('lazy').setup({
       require("trouble").setup {
         -- position = "",
         -- padding = false,
+      }
+    end
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
       }
     end
   },
