@@ -185,8 +185,10 @@
 
 #workspaces button.focused {
     border-color: shade(@theme_selected_bg_color, 1.15);
-    color: white;
     background-color: @theme_selected_bg_color;
+    color: white;
+    /* background-color: #f44747; */
+    /* border-color: shade(#f44747, 1.15); */
 }
 
 #workspaces button.urgent {

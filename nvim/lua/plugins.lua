@@ -17,6 +17,17 @@ require('lazy').setup({
   -- { "RRethy/nvim-base16" },
   { "sainnhe/gruvbox-material" },
   { 'Mofiqul/vscode.nvim' },
+  { 'alexvzyl/nordic.nvim' },
+  { 'nlknguyen/papercolor-theme' },
+  { 'chriskempson/base16-vim' },
+  { 'iamcco/onedark.vim' },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    config = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
 
   {
     "loctvl842/monokai-pro.nvim",
@@ -34,7 +45,7 @@ require('lazy').setup({
 
   { 'tjdevries/express_line.nvim' },
 
-  { 'vimwiki/vimwiki' },
+  -- { 'vimwiki/vimwiki' },
 
   -- treesitter, lsp
   {
@@ -61,13 +72,13 @@ require('lazy').setup({
 
   'onsails/lspkind.nvim',
 
-  -- telescope
-  {
-    'nvim-telescope/telescope.nvim',
-    dependencies = { {'nvim-lua/plenary.nvim'} }
-  },
-
-  'jeetsukumaran/telescope-buffer-lines.nvim',
+  -- -- telescope
+  -- {
+  --   'nvim-telescope/telescope.nvim',
+  --   dependencies = { {'nvim-lua/plenary.nvim'} }
+  -- },
+  -- --
+  -- 'jeetsukumaran/telescope-buffer-lines.nvim',
 
   {
     'numToStr/Comment.nvim', -- comment
@@ -123,10 +134,12 @@ require('lazy').setup({
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   },
 
-  {
-    'romgrk/barbar.nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons'
-  },
+  -- {
+  --   'romgrk/barbar.nvim',
+  --   dependencies = 'nvim-tree/nvim-web-devicons'
+  -- },
+
+  {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 
   {
     'stevearc/aerial.nvim',

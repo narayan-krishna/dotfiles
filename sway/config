@@ -29,15 +29,16 @@ include /etc/sway/config-vars.d/*
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-# output * bg /home/knara/Pictures/Wallpapers/2832975.jpg fill
+# # output * bg /home/knara/Pictures/Wallpapers/2832975.jpg fill
 # output * bg /home/knara/Pictures/Wallpapers/wq8a8n9lj95a1.png fill
-# output * bg /home/knara/Pictures/Wallpapers/index.jpeg fill
 # output * bg /home/knara/Pictures/Wallpapers/carss.jpg fill
 # output * bg /home/knara/Pictures/Wallpapers/FGVi2DyWQAAauhl.jpeg fill
 # output * bg /home/knara/Pictures/Wallpapers/sub.jpg fill
-output * bg /home/knara/Pictures/Wallpapers/15.jpg fill
+# output * bg /home/knara/Pictures/Wallpapers/15.jpg fill
 # output * bg /home/knara/Pictures/Wallpapers/mac_os_monterey.jpg fill
 # output * bg /home/knara/Pictures/Wallpapers/waves6.jpg fill
+# output * bg /home/knara/Pictures/Wallpapers/racing2.jpg fill
+output * bg /home/knara/Pictures/photos/IMG_1187.JPG fill
 
 #
 # Example configuration:
@@ -211,6 +212,7 @@ exec swayidle -w \
 # Some hotkeys for personal use:
     bindsym $mod+Shift+f exec firefox
     bindsym $mod+Shift+s exec spotify
+    bindsym $mod+Shift+p exec grim
 
 #
 # Resizing containers:

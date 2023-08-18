@@ -13,7 +13,7 @@
     // "modules-center": ["clock#time"],
 
     // "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],
-    "modules-center": ["clock#time"],
+    "modules-center": ["clock#time", "clock#date"],
 
     "modules-right": ["tray", "idle_inhibitor", "network", "pulseaudio", "cpu", "memory", "battery"],
 
