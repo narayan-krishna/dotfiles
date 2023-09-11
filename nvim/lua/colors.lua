@@ -1,7 +1,8 @@
-local colorscheme = 'vscode'
+local colorscheme = 'gruvbox'
 
 vim.g.gruvbox_material_background = 'hard';
 vim.g.gruvbox_material_foreground = 'mix';
+vim.g.mellow_bold_functions = true;
 
 require("gruvbox").setup({
   undercurl = true,
@@ -17,23 +18,17 @@ require("gruvbox").setup({
   palette_overrides = {
   },
   overrides = {
-    -- SignColumn        = {bg = ""},
-    -- GruvboxRedSign    = {bg = ""},
-    -- GruvboxGreenSign  = {bg = ""},
-    -- GruvboxYellowSign = {bg = ""},
-    -- GruvboxBlueSign   = {bg = ""},
-    -- GruvboxPurpleSign = {bg = ""},
-    -- GruvboxAquaSign   = {bg = ""},
-    -- GruvboxOrangeSign = {bg = ""},
-    NvimTreeNormal = { bg = "#1a1d1e" },
-    -- NvimTreeWinSeparator = { fg = "#1a1d1e", bg = "#1a1d1e" },
-    -- StatusLine = {bg = "#928374", fg = "#1d2021"},
-    LineNr = {bg = "#3c3836"},
-    Normal = {bg = "NONE"},
-    -- TabLineFill = {bg = "#1d2021"},
-    TabLineSel = {bg = "#1d2021"},
+    SignColumn        = {bg = ""},
+    GruvboxRedSign    = {bg = ""},
+    GruvboxGreenSign  = {bg = ""},
+    GruvboxYellowSign = {bg = ""},
+    GruvboxBlueSign   = {bg = ""},
+    GruvboxPurpleSign = {bg = ""},
+    GruvboxAquaSign   = {bg = ""},
+    GruvboxOrangeSign = {bg = ""},
+    LineNr = { bg = "" },
   },
-  dim_inactive = false,
+  dim_inactive = true,
   transparent_mode = false,
 })
 
@@ -51,12 +46,21 @@ local custom_highlight = vim.api.nvim_create_augroup("CustomHighlight", {})
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "gruvbox",
   callback = function()
+    vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
     vim.api.nvim_set_hl(0, "WinBarNC", { bg = "NONE" })
     vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
     vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = "#3c3836", bg = "NONE" })
     vim.api.nvim_set_hl(0, "IndentBlanklineSpaceChar", { fg = "NONE" })
     vim.api.nvim_set_hl(0, "String", { fg = "#83A598" })
     vim.api.nvim_set_hl(0, "Identifier", { fg = "#ebdbb2" })
+    vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "#1d2021" })
+    vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#1a1c1d", bg = "#1a1c1d" })
+    vim.api.nvim_set_hl(0, "BufferLineOffsetSeparator", { fg = "#1a1c1d", bg = "#1a1c1d" })
+    vim.api.nvim_set_hl(0, "BufferLineFill", { bg = "NONE", })
+    vim.api.nvim_set_hl(0, "BufferLineSeparator", { fg = "#1a1c1d", bg = "NONE" })
+    vim.api.nvim_set_hl(0, "BufferLineTab", { fg = "red", bg = "red" })
+    vim.api.nvim_set_hl(0, "BufferLineTabSelected", { fg = "red", bg = "red" })
+    vim.api.nvim_set_hl(0, "BufferLineBackground", { bg = "NONE" })
   end,
   group = custom_highlight,
 })
@@ -78,25 +82,8 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   callback = function()
     vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#252526", bg = "#252526" })
     vim.api.nvim_set_hl(0, "BufferLineOffsetSeparator", { fg = "#252526", bg = "#252526" })
-    -- vim.api.nvim_set_hl(0, "NvimTreeStatusLineNC", { fg = "#252526", bg = "#252526" })
-    -- vim.api.nvim_set_hl(0, "NvimTreeStatusLine", { fg = "#252526", bg = "#252526" })
-    vim.api.nvim_set_hl(0, "BufferLineFill", { bg = "#1e1e1e", })
-    -- vim.api.nvim_set_hl(0, "BufTabLineCurrent", { bg = "#1c1c1c", fg = "#1c1c1c"})
+    vim.api.nvim_set_hl(0, "BufferLineFill", { bg = "NONE", })
     vim.api.nvim_set_hl(0, "WinBar", { bg = "NONE" })
-  end,
-  group = custom_highlight,
-})
-
-vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "PaperColor",
-  callback = function()
-    vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#1c1c1c", bg = "#1c1c1c" })
-    -- vim.api.nvim_set_hl(0, "NvimTreeStatusLineNC", { fg = "#252526", bg = "#252526" })
-    -- vim.api.nvim_set_hl(0, "NvimTreeStatusLine", { fg = "#252526", bg = "#252526" })
-    -- vim.api.nvim_set_hl(0, "BufferTabpageFill", { bg = "#1a1a1a", })
-    vim.api.nvim_set_hl(0, "BufferTabpageFill", { bg = "#1c1c1c", })
-    vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
-    -- vim.api.nvim_set_hl(0, "WinBar", { bg = "NONE" })
   end,
   group = custom_highlight,
 })

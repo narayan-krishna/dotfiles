@@ -113,7 +113,7 @@ schemes:
 
   Gruvboxdark: &Gruvboxdark
     primary:
-      background: '#1D2021'
+      background: '#1a1c1d'
       foreground: '#D5C4A1'
 
     normal:
@@ -265,45 +265,38 @@ schemes:
       cyan:    '#66D9EF'
       white:   '#F8F8F2'
 
-	OneDark: &OneDark
+	BlackMetal: &BlackMetal
     # Default colors
     primary:
-      background: '0x232326'
-      foreground: '0xabb2bf'
+      background: '0x000000'
+      foreground: '0xc1c1c1'
 
-      #dim_foreground: '0x9a9a9a'
-      bright_foreground: '0xe6efff'
+    # Colors the cursor will use if `custom_cursor_colors` is true
+    cursor:
+      text: '0x000000'
+      cursor: '0xc1c1c1'
 
+    # Normal colors
     normal:
-      black:   '0x1e2127'
-      red:     '0xe06c75'
-      green:   '0x98c379'
-      yellow:  '0xd19a66'
-      blue:    '0x61afef'
-      magenta: '0xc678dd'
-      cyan:    '0x56b6c2'
-      white:   '0x828791'
+      black:   '0x000000'
+      red:     '0x5f8787'
+      green:   '0xdd9999'
+      yellow:  '0xa06666'
+      blue:    '0x888888'
+      magenta: '0x999999'
+      cyan:    '0xaaaaaa'
+      white:   '0xc1c1c1'
 
     # Bright colors
     bright:
-      black:   '0x5c6370'
-      red:     '0xe06c75'
-      green:   '0x98c379'
-      yellow:  '0xd19a66'
-      blue:    '0x61afef'
-      magenta: '0xc678dd'
-      cyan:    '0x56b6c2'
-      white:   '0xe6efff'
-
-    dim:
-      black:   '0x1e2127'
-      red:     '0xe06c75'
-      green:   '0x98c379'
-      yellow:  '0xd19a66'
-      blue:    '0x61afef'
-      magenta: '0xc678dd'
-      cyan:    '0x56b6c2'
-      white:   '0x828791'
+      black:   '0x333333'
+      red:     '0xaaaaaa'
+      green:   '0x121212'
+      yellow:  '0x222222'
+      blue:    '0x999999'
+      magenta: '0x999999'
+      cyan:    '0x444444'
+      white:   '0xc1c1c1'
 
 	Vscode: &Vscode
     primary:
@@ -334,44 +327,28 @@ schemes:
       cyan:    '#56b6c2'
       white:   '#d4d4d4'
 
-	PaperColor: &PaperColor
+	MinimalBase16: &MinimalBase16
+    # Default colors
     primary:
-      background: '0x1c1c1c'
-      foreground: '0x808080'
-
-    # Colors the cursor will use if `custom_cursor_colors` is true
-    cursor:
-      text: '0x1c1c1c'
-      cursor: '0x808080'
-
-    # Normal colors
+      background: '#1D1F21'
+      foreground: '#CACBD4'
     normal:
-      black:   '0x1c1c1c'
-      red:     '0x585858'
-      green:   '0xaf87d7'
-      yellow:  '0xafd700'
-      blue:    '0xff5faf'
-      magenta: '0x00afaf'
-      cyan:    '0xffaf00'
-      white:   '0x808080'
-
-    # Bright colors
+      black:   '#2C2D32'
+      red:     '#CC6674'
+      green:   '#90BD62'
+      yellow:  '#D7B66F'
+      blue:    '#8BADCD'
+      magenta: '#B799C8'
+      cyan:    '#89BEB7'
+      white:   '#CACBD4'
     bright:
-      black:   '0xd7af5f'
-      red:     '0x585858'
-      green:   '0xaf87d7'
-      yellow:  '0xafd700'
-      blue:    '0xff5faf'
-      magenta: '0x00afaf'
-      cyan:    '0xffaf00'
-      white:   '0xd0d0d0'
+      black:   '#1A1C1D'
+      red:     '#d95555'
+      green:   '#90BD62'
+      yellow:  '#D7B66F'
+      blue:    '#81A2BF'
+      magenta: '#B799C8'
+      cyan:    '#89BEB7'
+      white:   '#CACBD4'
 
-    indexed_colors:
-      - { index: 16, color: '0x5faf5f' }
-      - { index: 17, color: '0x5f8787' }
-      - { index: 18, color: '0xaf005f' }
-      - { index: 19, color: '0x5faf00' }
-      - { index: 20, color: '0x5fafd7' }
-      - { index: 21, color: '0xd7875f' }
-
-colors: *Vscode
+colors: *Gruvboxdark

@@ -48,8 +48,8 @@
 
 /* The whole bar */
 #waybar {
-    background: alpha(@theme_base_color, 1);
-    color: shade(@theme_base_color, 6);
+    background: shade(@theme_base_color, .5);
+    color: shade(@theme_text_color, 1);
     /* font-family: Noto Sans, sans-serif; */
     font-family: NotoSans Nerd Font;
     font-size: 14px;

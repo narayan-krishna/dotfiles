@@ -15,12 +15,23 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   { "ellisonleao/gruvbox.nvim" },
   -- { "RRethy/nvim-base16" },
+  -- { "chriskempson/base16-vim" },
   { "sainnhe/gruvbox-material" },
-  { 'Mofiqul/vscode.nvim' },
-  { 'alexvzyl/nordic.nvim' },
-  { 'nlknguyen/papercolor-theme' },
-  { 'chriskempson/base16-vim' },
-  { 'iamcco/onedark.vim' },
+
+  {
+    'Mofiqul/vscode.nvim',
+    config = function()
+      require('vscode').setup({
+        italic_comments = true,
+        color_overrides = {
+          -- vscBack = '#181818',
+          -- vscLeftDark = '#181818',
+        },
+      })
+    end
+  },
+
+  { 'rktjmp/lush.nvim' },
 
   {
     "iamcco/markdown-preview.nvim",
@@ -159,6 +170,8 @@ require('lazy').setup({
     end
   },
 
+  -- ashley@morephysicaltherapy.com
+
   {
     'ibhagwan/fzf-lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' }, -- optional for icon support
@@ -167,12 +180,13 @@ require('lazy').setup({
         winopts = {
           -- split = "belowright new",
           height = 0.85,
-          width = 0.60,
+          width = 0.80,
           row = 0.35,
+          column = 0.5,
           preview = {
             vertical = 'up:60%',      -- up|down:size
-            horizontal = 'right:50%',
-            layout = 'vertical',
+            horizontal = 'right:55%',
+            layout = 'horizontal',
           }
         }
       })

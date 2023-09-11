@@ -268,15 +268,16 @@ bindsym $mod+r mode "resize"
 # client.focused "#131313" "#131313" "#131313" "#fc681d"
 # client.focused "#F4F99D" "#F4F99D" "#F4F99D" "#F4F99D"
 # client.focused "#FE8019" "#FE8019" "#FE8019" "#FE8019" "FE8019"
-# client.focused "#83A598" "#83A598" "#FE8019" "#83A598"
+# client.focused "#78ab50" "#208fe9" "#208fe9" "#208fe9"
 # client.focused "#4d4d4d" "#4d4d4d" "#4d4d4d" "#4d4d4d"
 # client.focused_inactive "#a6401c" "#a6401c" "#a6401c" "#a6401c" "#a6401c"
 # client.unfocused "#000000" "#000000" "#000000" "#000000" "#000000"
 # client.focused_inactive "#000000" "#000000" "#000000" "#000000" "#000000"
 
 # client.focused_inactive "#2c2c2c" "#2c2c2c" "#2c2c2c" "#2c2c2c" "#2c2c2c"
-# client.unfocused "#2c2c2c" "#2c2c2c" "#2c2c2c" "#2c2c2c" "#2c2c2c"
-client.focused "#264f78" "#264f78" "#264f78" "#264f78" "#264f78"
+# client.focused "#2c2c2c" "#2c2c2c" "#2c2c2c" "#2c2c2c" "#2c2c2c"
+# client.focused "#264f78" "#264f78" "#264f78" "#264f78" "#264f78"
+client.focused "#c6aadc" "#c6aadc" "#c6aadc" "#c6aadc" "#c6aadc"
 
 
 input type:keyboard {
@@ -304,7 +305,7 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 include /etc/sway/config.d/*
 
 smart_gaps on
-default_border pixel 2
+default_border pixel 1
 # hide_edge_borders smart
 smart_borders on
 # default_floating_border none

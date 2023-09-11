@@ -4,7 +4,7 @@ and not set -q TMUX
 end
 
 alias ls='exa --icons'
-alias ll='exa -l'
+alias ll='exa -l --icons'
 
 alias fd='fdfind'
 alias vi='nvim'
@@ -13,6 +13,7 @@ alias c='cd ~ && cd $(fd --type d | fzf) && ls'
 alias cr='cd $(fd --type d | fzf) && ls'
 alias v='vi $(fd --type f | fzf)'
 alias cat='bat'
+alias ff_config='vi /home/knara/snap/firefox/common/.mozilla/firefox/cpqtldne.default/chrome/userChrome.css'
 
 # alias config='cd ~/.config && ls'
 # unalias ls
@@ -40,3 +41,5 @@ set --universal nvm_default_version v18.15.0
 # if doesnt exist, create
 source $config/fish/functions/utilities.fish
 source $config/fish/launch/launch.fish
+
+fish_ssh_agent
